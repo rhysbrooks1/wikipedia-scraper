@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
+#Url for wikipedia webpage
 url = 'https://en.wikipedia.org/wiki/List_of_U.S._states_by_date_of_admission_to_the_Union'
 
 page = requests.get(url)
@@ -29,11 +30,11 @@ if table:
         individual_row_data = [data.text.strip() for data in row_data]
         rows.append(dict(zip(table_column_titles, individual_row_data)))
 
+    #Copies row data to the DataFrame
     df = pd.DataFrame(rows)
 
-    # Display the DataFrame
+    # Displays DataFrame with unlimited row count
     pd.set_option('display.max_rows', None)
-    print(table_column_titles)
     print(df)
 else:
     print("Table not found with the specified class.")
