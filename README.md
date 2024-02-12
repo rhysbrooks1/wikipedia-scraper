@@ -8,10 +8,10 @@ Make sure you have the required Python libraries installed:
 
 - `requests`
 - `BeautifulSoup`
-- `pandas`
+- `Matplotlib`
 
 You can install them using:
 
 ```bash
-pip install requests beautifulsoup4 pandas
+pip install requests beautifulsoup4 matplotlib
 
